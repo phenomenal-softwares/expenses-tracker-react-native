@@ -24,4 +24,5 @@ A sleek and simple mobile app built with **React Native (Expo)** to help users m
 - EAS Build for generating APKs
 
 ---
-
+## ✨ Author
+- Abiodun (Phenomenal Productions)

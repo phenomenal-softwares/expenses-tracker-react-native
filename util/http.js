@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL } from "@env"; // This assumes you have BASE_URL in your .env file
+import { BASE_URL } from "@env";
 
 const BACKEND_URL = BASE_URL;
 

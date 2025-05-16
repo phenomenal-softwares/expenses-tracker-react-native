@@ -1,3 +1,4 @@
+import { View, Text, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -9,6 +10,7 @@ import AllExpenses from "./screens/AllExpenses";
 import { GlobalStyles } from "./constants/styles";
 import IconButton from "./components/UI/IconButton";
 import ExpensesContextProvider from "./store/expenses-context";
+import { useNetworkStatus } from "./util/useNetworkStatus";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -60,6 +62,16 @@ function ExpensesOverview() {
 }
 
 export default function App() {
+  const isConnected = useNetworkStatus();
+
+  if (!isConnected) {
+    return (
+      <View style={styles.noConnection}>
+        <Text style={styles.warningText}>No internet connection. Please check your network.</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       <StatusBar style="light" />
@@ -85,3 +97,18 @@ export default function App() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  noConnection: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: GlobalStyles.colors.primary700,
+  },
+  warningText: {
+    color: GlobalStyles.colors.primary50,
+    fontSize: 16,
+    padding: 20,
+    textAlign: "center",
+  }
+});

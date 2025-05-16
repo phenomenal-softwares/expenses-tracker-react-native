@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "expenses-tracker",
+    "name": "Cost Control",
     "slug": "expenses-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,20 +9,27 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "jsEngine": "hermes",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.phenomenalproductions.costcontrol"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b4ae07ce-7677-4f48-9256-6094bee75950"
+      }
     }
   }
 }

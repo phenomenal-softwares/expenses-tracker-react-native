@@ -53,6 +53,7 @@ function ManageExpense({ route, navigation }) {
       navigation.goBack();
     } catch (error) {
       setError("Could not save data - please try again later!");
+      console.error("Error adding expense:", error.response?.data || error.message || error);
       setIsSubmitting(false);
     }
   }
