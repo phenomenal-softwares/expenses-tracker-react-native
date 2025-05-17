@@ -18,7 +18,10 @@
       "android": {
         "buildType": "apk"
       },
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "BACKEND_URL": "@BACKEND_URL"
+      }
     }
   },
   "submit": {

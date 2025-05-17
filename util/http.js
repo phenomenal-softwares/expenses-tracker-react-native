@@ -1,7 +1,6 @@
 import axios from "axios";
-import { BASE_URL } from "@env";
 
-const BACKEND_URL = BASE_URL;
+const BACKEND_URL = process.env.BACKEND_URL;
 
 export async function storeExpense(expenseData) {
   const response = await axios.post(
